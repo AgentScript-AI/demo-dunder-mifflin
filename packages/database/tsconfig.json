@@ -3,9 +3,9 @@
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
-        "tsBuildInfoFile": "./.tsbuildinfo",
-        "types": ["@types/node"],
-        "jsx": "react-jsx"
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "tsBuildInfoFile": "./.tsbuildinfo"
     },
     "include": ["src"],
     "references": []
