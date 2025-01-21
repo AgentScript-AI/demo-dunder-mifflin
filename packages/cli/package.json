@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@dunder-mifflin/database": "workspace:^",
+        "@nzyme/node-utils": "^0.4.1",
         "@nzyme/utils": "^0.4.1",
         "@tqman/ink-table": "^0.0.0-development",
         "agentscript-ai": "^0.3.0",

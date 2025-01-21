@@ -1,6 +1,7 @@
 import { Box, Text } from 'ink';
 
 import { Block } from './Block.js';
+import { ColoredBox } from './ColoredBox.js';
 
 interface MessageProps {
     role: 'user' | 'assistant' | 'code';
@@ -19,24 +20,22 @@ interface MessageProps {
 export function Message({ role, text, children }: MessageProps) {
     const author = getAuthor(role);
     const color = getColor(role);
+    const align = getAlign(role);
+    const margin = getMargin(role);
 
     return (
-        <Block align={role === 'user' ? 'right' : 'left'}>
+        <Block align={align}>
             <Box
-                marginRight={role === 'user' ? 0 : 20}
-                marginLeft={role === 'user' ? 20 : 0}
+                marginRight={margin.right}
+                marginLeft={margin.left}
             >
-                <Box
-                    flexDirection="column"
-                    borderStyle="round"
-                    borderColor={color}
-                    paddingLeft={1}
-                    paddingRight={1}
+                <ColoredBox
+                    color={color}
+                    title={author}
                 >
-                    <Text color={color}>{author}: </Text>
                     {text && <Text>{text}</Text>}
                     {children}
-                </Box>
+                </ColoredBox>
             </Box>
         </Block>
     );
@@ -61,5 +60,27 @@ function getAuthor(role: MessageProps['role']) {
             return 'Dwight Schrute';
         case 'code':
             return 'AgentScript code';
+    }
+}
+
+function getAlign(role: MessageProps['role']) {
+    switch (role) {
+        case 'user':
+            return 'right';
+        case 'assistant':
+            return 'left';
+        case 'code':
+            return 'center';
+    }
+}
+
+function getMargin(role: MessageProps['role']) {
+    switch (role) {
+        case 'user':
+            return { left: 20, right: 0 };
+        case 'assistant':
+            return { left: 0, right: 20 };
+        case 'code':
+            return { left: 10, right: 10 };
     }
 }

@@ -3,6 +3,7 @@ import SyntaxHighlight from 'ink-syntax-highlight';
 
 import { defineTool } from 'agentscript-ai';
 import * as s from 'agentscript-ai/schema';
+import { toJson } from 'agentscript-ai/schema';
 
 import { Message } from '../components/Message.js';
 import { renderOnce } from '../utils/renderOnce.js';
@@ -52,7 +53,7 @@ function renderData(data: unknown) {
     return (
         <SyntaxHighlight
             language="json"
-            code={JSON.stringify(data, null, 2)}
+            code={toJson(data, 2)}
         />
     );
 }
