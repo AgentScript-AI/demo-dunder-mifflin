@@ -19,7 +19,6 @@
     },
     "dependencies": {
         "@dunder-mifflin/database": "workspace:^",
-        "@nzyme/node-utils": "^0.4.1",
         "@nzyme/utils": "^0.4.1",
         "@tqman/ink-table": "^0.0.0-development",
         "agentscript-ai": "^0.3.0",
@@ -27,6 +26,7 @@
         "ink": "^5.1.0",
         "ink-big-text": "^2.0.0",
         "ink-divider": "^4.1.0",
+        "ink-select-input": "^6.0.0",
         "ink-spinner": "^5.0.0",
         "ink-syntax-highlight": "^2.0.2",
         "ink-text-input": "^6.0.0",

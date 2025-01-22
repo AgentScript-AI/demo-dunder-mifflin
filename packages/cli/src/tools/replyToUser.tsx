@@ -5,7 +5,7 @@ import { defineTool } from 'agentscript-ai';
 import * as s from 'agentscript-ai/schema';
 import { toJson } from 'agentscript-ai/schema';
 
-import { Message } from '../components/Message.js';
+import { AssistantMessage } from '../components/Message.js';
 import { renderOnce } from '../utils/renderOnce.js';
 
 /**
@@ -30,14 +30,7 @@ export const replyToUser = defineTool({
     handler({ input }) {
         const data = renderData(input.data);
 
-        renderOnce(
-            <Message
-                role="assistant"
-                text={input.message}
-            >
-                {data}
-            </Message>,
-        );
+        renderOnce(<AssistantMessage text={input.message}>{data}</AssistantMessage>);
     },
 });
 

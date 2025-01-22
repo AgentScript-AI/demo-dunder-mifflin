@@ -1,4 +1,3 @@
-import { patchNodeWarnings } from '@nzyme/node-utils';
 import { Text, render } from 'ink';
 import Spinner from 'ink-spinner';
 import SyntaxHighlight from 'ink-syntax-highlight';
@@ -8,20 +7,13 @@ import { chainAgent, defineAgent, executeAgent, inferAgent } from 'agentscript-a
 import { AnthropicModel } from 'agentscript-ai/anthropic';
 
 import { Logo } from './components/Logo.js';
-import { Message } from './components/Message.js';
+import { AssistantMessage, Message, UserMessage } from './components/Message.js';
 import * as tools from './tools.js';
-import { getInput } from './utils/getInput.js';
+import { getStringInput } from './utils/getStringInput.js';
 import { renderOnce } from './utils/renderOnce.js';
 
-patchNodeWarnings();
-
 renderOnce(<Logo />);
-renderOnce(
-    <Message
-        role="assistant"
-        text="Hi, how may I assist you?"
-    />,
-);
+renderOnce(<AssistantMessage text="Hi, how may I assist you?" />);
 
 const model = AnthropicModel({
     model: 'claude-3-5-sonnet-latest',
@@ -29,8 +21,10 @@ const model = AnthropicModel({
     maxTokens: 1024,
 });
 
-const systemPrompt =
-    'You are Dwight Schrute, a salesman at Dunder Mifflin paper company. Act like him and use his tone.';
+const systemPrompt = [
+    'You are Dwight Schrute, a salesman at Dunder Mifflin paper company. Act like him and use his tone.',
+    'Do not make up data or numbers. If missing data, ask the user for input using .',
+];
 
 const agentDef = defineAgent({ tools });
 
@@ -55,23 +49,18 @@ while (true) {
 }
 
 async function runAgent(agentFactory: (prompt: string) => Promise<AgentFor<typeof agentDef>>) {
-    const prompt = await getInput({
+    const prompt = await getStringInput({
         label: 'You',
     });
 
-    renderOnce(
-        <Message
-            role="user"
-            text={prompt}
-        />,
-    );
+    renderOnce(<UserMessage text={prompt} />);
     const { clear } = render(
-        <Message role="assistant">
+        <AssistantMessage>
             <Text>
                 Wait a moment
                 <Spinner type="simpleDots" />
             </Text>
-        </Message>,
+        </AssistantMessage>,
     );
 
     const agent = await agentFactory(prompt);
@@ -80,12 +69,12 @@ async function runAgent(agentFactory: (prompt: string) => Promise<AgentFor<typeo
     if (agent.plan) {
         renderOnce(
             <>
-                <Message
-                    role="assistant"
-                    text={agent.plan}
-                />
+                <AssistantMessage text={agent.plan} />
                 {agent.script.code && (
-                    <Message role="code">
+                    <Message
+                        title="AgentScript code"
+                        color="magenta"
+                    >
                         <SyntaxHighlight
                             language="typescript"
                             code={agent.script.code}

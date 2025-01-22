@@ -1,10 +1,13 @@
 import { Box, Text } from 'ink';
 
 import { Block } from './Block.js';
-import { ColoredBox } from './ColoredBox.js';
+import { ASSISTANT_NAME } from '../constants.js';
+import type { Color } from '../types.js';
 
 interface MessageProps {
-    role: 'user' | 'assistant' | 'code';
+    title: string;
+    color: Color;
+    align?: 'left' | 'right' | 'center';
     text?: string;
     children?: React.ReactNode;
 }
@@ -13,74 +16,82 @@ interface MessageProps {
  * A message.
  * @param props - The props for the message.
  * @param props.children - The children of the message.
- * @param props.role - The role of the message.
+ * @param props.title - The title of the message.
+ * @param props.color - The color of the message.
+ * @param props.align - The alignment of the message.
  * @param props.text - The text of the message.
  * @returns The message.
  */
-export function Message({ role, text, children }: MessageProps) {
-    const author = getAuthor(role);
-    const color = getColor(role);
-    const align = getAlign(role);
-    const margin = getMargin(role);
+export function Message({ title, color, align, text, children }: MessageProps) {
+    const margin = getMargin(align);
 
     return (
         <Block align={align}>
             <Box
                 marginRight={margin.right}
                 marginLeft={margin.left}
+                flexDirection="column"
+                borderStyle="round"
+                borderColor={color}
+                paddingLeft={1}
+                paddingRight={1}
             >
-                <ColoredBox
-                    color={color}
-                    title={author}
-                >
-                    {text && <Text>{text}</Text>}
-                    {children}
-                </ColoredBox>
+                <Text color={color}>{title}: </Text>
+                {text && <Text>{text}</Text>}
+                {children}
             </Box>
         </Block>
     );
 }
 
-function getColor(role: MessageProps['role']) {
-    switch (role) {
-        case 'user':
-            return 'cyan';
-        case 'assistant':
-            return 'green';
-        case 'code':
-            return 'magenta';
-    }
+/**
+ * A message from the user.
+ * @param props - The props for the message.
+ * @param props.text - The text of the message.
+ * @param props.children - The children of the message.
+ * @returns The message.
+ */
+export function UserMessage({ text, children }: Pick<MessageProps, 'text' | 'children'>) {
+    return (
+        <Message
+            title="You"
+            color="blue"
+            align="right"
+            text={text}
+        >
+            {children}
+        </Message>
+    );
 }
 
-function getAuthor(role: MessageProps['role']) {
-    switch (role) {
-        case 'user':
-            return 'You';
-        case 'assistant':
-            return 'Dwight Schrute';
-        case 'code':
-            return 'AgentScript code';
-    }
+/**
+ * A message from the assistant.
+ * @param props - The props for the message.
+ * @param props.text - The text of the message.
+ * @param props.children - The children of the message.
+ * @returns The message.
+ */
+export function AssistantMessage({ text, children }: Pick<MessageProps, 'text' | 'children'>) {
+    return (
+        <Message
+            title={ASSISTANT_NAME}
+            color="green"
+            align="left"
+            text={text}
+        >
+            {children}
+        </Message>
+    );
 }
 
-function getAlign(role: MessageProps['role']) {
-    switch (role) {
-        case 'user':
-            return 'right';
-        case 'assistant':
-            return 'left';
-        case 'code':
-            return 'center';
-    }
-}
-
-function getMargin(role: MessageProps['role']) {
-    switch (role) {
-        case 'user':
+function getMargin(align?: MessageProps['align']) {
+    switch (align) {
+        case 'right':
             return { left: 20, right: 0 };
-        case 'assistant':
+        case 'left':
             return { left: 0, right: 20 };
-        case 'code':
+        case 'center':
+        default:
             return { left: 10, right: 10 };
     }
 }

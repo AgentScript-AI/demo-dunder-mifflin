@@ -39,5 +39,7 @@ function getAlign(align: BlockProps['align']) {
             return 'flex-end';
         case 'center':
             return 'center';
+        default:
+            return 'stretch';
     }
 }
