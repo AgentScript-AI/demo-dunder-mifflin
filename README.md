@@ -19,7 +19,7 @@ Here you can see it in action!
 ## Running the project
 
 Create an `.env` file in the root of the repo. \
-Since we are using Anthropic Claude model, all examples require Anthropic API:
+Since we are using Anthropic Claude model, we need Anthropic API key:
 
 ```
 ANTHROPIC_API_KEY=your-anthropic-api-key
