@@ -37,7 +37,6 @@ Setup database (Supabase) - you need to have Docker up and running:
 yarn db:start
 ```
 
-tj
 Push database schema:
 
 ```
