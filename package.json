@@ -13,9 +13,12 @@
         "db:start": "yarn supabase start",
         "db:push": "yarn --cwd packages/database db:push",
         "db:seed": "yarn --cwd packages/database db:seed",
+        "db:setup": "yarn db:start && yarn db:push",
         "monorepo": "nzyme monorepo",
         "build": "nzyme monorepo && tsc -b ./tsconfig.dev.json",
-        "setup": "nzyme monorepo && yarn build && yarn db:start && yarn db:push"
+        "setup": "nzyme monorepo && yarn build && yarn db:start && yarn db:push",
+        "start": "yarn --cwd packages/cli start",
+        "dev": "yarn --cwd packages/cli dev"
     },
     "devDependencies": {
         "@agentscript-ai/tsconfig": "^0.4.0",
