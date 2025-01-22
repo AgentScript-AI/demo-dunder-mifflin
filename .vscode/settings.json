@@ -3,7 +3,6 @@
     "editor.formatOnSave": true,
     "files.exclude": {
         "**/.git": true,
-        "**/dist": true,
         "**/node_modules/**": true,
         "**/tsconfig.tsbuildinfo": true
     },

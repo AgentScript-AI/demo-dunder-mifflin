@@ -11,8 +11,10 @@
   <br/>  <br/>
 </div>
 
-AgentScript is a unique open-source SDK for building AI agents.
+AgentScript is a unique open-source SDK for building AI agents. \
 Here you can see it in action!
+
+<img src="./assets/dunder-mifflin.png" alt="Docs" style="max-width: 640px">
 
 ## Running the project
 
@@ -23,22 +25,23 @@ Since we are using Anthropic Claude model, all examples require Anthropic API:
 ANTHROPIC_API_KEY=your-anthropic-api-key
 ```
 
-Install all dependencies:
+Install dependencies and build the project:
 
 ```
-yarn
-```
-
-Build project:
-
-```
-yarn build
+yarn && yarn build
 ```
 
 Setup database (Supabase) - you need to have Docker up and running:
 
 ```
-yarn db:setup
+yarn db:start
+```
+
+tj
+Push database schema:
+
+```
+yarn db:push
 ```
 
 Seed database with exemplary data
@@ -58,7 +61,7 @@ yarn start
 Compile TypeScript in watch mode:
 
 ```
-yarn build --build
+yarn build --watch
 ```
 
 Run the project in a dev mode (restarting on changes)

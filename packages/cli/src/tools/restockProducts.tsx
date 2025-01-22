@@ -15,6 +15,7 @@ export const restockProducts = defineTool({
     description: [
         'Restocks products. Updates the product in place.',
         'Use only if explicitly asked.',
+        'If quantity is not explicitly provided, ask for it.',
     ],
     input: {
         products: s.array({
