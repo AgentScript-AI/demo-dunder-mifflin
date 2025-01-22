@@ -8,7 +8,7 @@
     "private": true,
     "scripts": {
         "upgrade:agentscript": "yarn up agentscript-ai \"@agentscript-ai/*\"",
-        "upgrade:nzyme": "yarn up nzyme \"@nzyme/*\"",
+        "upgrade:nzyme": "yarn up \"@nzyme/*\"",
         "upgrade:interactive": "yarn upgrade-interactive",
         "db:start": "yarn supabase start",
         "db:push": "yarn --cwd packages/database db:push",
