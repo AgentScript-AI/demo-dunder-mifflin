@@ -1,10 +1,10 @@
+import { anthropic } from '@ai-sdk/anthropic';
 import { Text, render } from 'ink';
 import Spinner from 'ink-spinner';
 import SyntaxHighlight from 'ink-syntax-highlight';
 
 import type { AgentFor } from 'agentscript-ai';
 import { chainAgent, defineAgent, executeAgent, inferAgent } from 'agentscript-ai';
-import { AnthropicModel } from 'agentscript-ai/anthropic';
 
 import { Logo } from './components/Logo.js';
 import { AssistantMessage, Message, UserMessage } from './components/Message.js';
@@ -15,11 +15,7 @@ import { renderOnce } from './utils/renderOnce.js';
 renderOnce(<Logo />);
 renderOnce(<AssistantMessage text="Hi, how may I assist you?" />);
 
-const model = AnthropicModel({
-    model: 'claude-3-5-sonnet-latest',
-    apiKey: process.env.ANTHROPIC_API_KEY,
-    maxTokens: 1024,
-});
+const model = anthropic('claude-3-5-sonnet-latest');
 
 const systemPrompt = [
     'You are Dwight Schrute, a salesman at Dunder Mifflin paper company. Act like him and use his tone.',
