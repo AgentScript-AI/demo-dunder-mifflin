@@ -12,9 +12,9 @@ const SortDirection = s.enum(['asc', 'desc']);
 const SortField = s.enum(['name', 'price', 'stock']);
 
 /**
- * Search for products
+ * List  products
  */
-export const searchProducts = defineTool({
+export const listProducts = defineTool({
     input: {
         sort: s.object({
             optional: true,
