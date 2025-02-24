@@ -10,6 +10,7 @@
         "upgrade:agentscript": "yarn up agentscript-ai \"@agentscript-ai/*\"",
         "upgrade:nzyme": "yarn up \"@nzyme/*\"",
         "upgrade:interactive": "yarn upgrade-interactive",
+        "upgrade": "yarn upgrade:agentscript && yarn upgrade:nzyme && yarn upgrade:interactive",
         "db:start": "yarn supabase start",
         "db:push": "yarn --cwd ./packages/database run push",
         "db:seed": "yarn --cwd ./packages/database run seed",
@@ -18,10 +19,10 @@
         "dev": "yarn --cwd ./packages/cli run dev"
     },
     "devDependencies": {
-        "@agentscript-ai/tsconfig": "^0.5.0",
-        "@nzyme/cli": "^0.5.0",
-        "prettier": "^3.4.2",
-        "supabase": "2.6.8",
+        "@agentscript-ai/tsconfig": "^0.6.0",
+        "@nzyme/cli": "^0.6.1",
+        "prettier": "^3.5.2",
+        "supabase": "2.15.8",
         "ts-node": "^10.9.2",
         "typescript": "^5.7.3"
     },
