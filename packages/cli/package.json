@@ -18,7 +18,7 @@
         "dev": "dotenv -e ../../.env -- node --inspect --watch-path=../ ./dist/cli.js"
     },
     "dependencies": {
-        "@ai-sdk/anthropic": "^1.1.9",
+        "@ai-sdk/anthropic": "^1.1.10",
         "@dunder-mifflin/database": "workspace:^",
         "@nzyme/utils": "^0.6.2",
         "@tqman/ink-table": "^0.0.0-development",
