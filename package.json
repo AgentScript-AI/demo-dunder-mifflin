@@ -9,8 +9,8 @@
     "scripts": {
         "upgrade:agentscript": "yarn up agentscript-ai \"@agentscript-ai/*\"",
         "upgrade:nzyme": "yarn up \"@nzyme/*\"",
-        "upgrade:interactive": "yarn upgrade-interactive",
-        "upgrade": "yarn upgrade:agentscript && yarn upgrade:nzyme && yarn upgrade:interactive",
+        "upgrade:auto": "yarn upgrade:agentscript && yarn upgrade:nzyme",
+        "upgrade": "yarn upgrade:auto && yarn upgrade-interactive",
         "db:start": "yarn supabase start",
         "db:push": "yarn --cwd ./packages/database run push",
         "db:seed": "yarn --cwd ./packages/database run seed",

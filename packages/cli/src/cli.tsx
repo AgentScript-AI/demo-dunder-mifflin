@@ -4,7 +4,7 @@ import Spinner from 'ink-spinner';
 import SyntaxHighlight from 'ink-syntax-highlight';
 
 import type { AgentFor } from 'agentscript-ai';
-import { chainAgent, defineAgent, executeAgent, inferAgent } from 'agentscript-ai';
+import { chainAgent, defineAgent, executeAgent, inferAgent, planMetadata } from 'agentscript-ai';
 
 import { Logo } from './components/Logo.js';
 import { AssistantMessage, Message, UserMessage } from './components/Message.js';
@@ -62,10 +62,11 @@ async function runAgent(agentFactory: (prompt: string) => Promise<AgentFor<typeo
     const agent = await agentFactory(prompt);
     clear();
 
-    if (agent.plan) {
+    const plan = planMetadata(agent);
+    if (plan) {
         renderOnce(
             <>
-                <AssistantMessage text={agent.plan} />
+                <AssistantMessage text={plan} />
                 {agent.script.code && (
                     <Message
                         title="AgentScript code"
