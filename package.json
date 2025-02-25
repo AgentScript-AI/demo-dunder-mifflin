@@ -14,7 +14,8 @@
         "db:start": "yarn supabase start",
         "db:push": "yarn --cwd ./packages/database run push",
         "db:seed": "yarn --cwd ./packages/database run seed",
-        "build": "nzyme monorepo && tsc -b ./tsconfig.dev.json",
+        "build": "nzyme monorepo && tsc -b ./.nzyme/tsconfig.esm.json",
+        "watch": "yarn build --watch",
         "start": "yarn --cwd ./packages/cli run start",
         "dev": "yarn --cwd ./packages/cli run dev"
     },
