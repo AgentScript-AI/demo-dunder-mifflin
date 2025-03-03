@@ -19,7 +19,7 @@
         "@agentscript-ai/core": "^0.7.0",
         "@nzyme/ioc": "^0.7.0",
         "@nzyme/utils": "^0.7.0",
-        "drizzle-orm": "^0.39.3",
+        "drizzle-orm": "^0.40.0",
         "postgres": "^3.4.5"
     },
     "devDependencies": {
@@ -28,8 +28,8 @@
         "@types/node": "^22.13.5",
         "dotenv": "^16.4.7",
         "dotenv-cli": "^8.0.0",
-        "drizzle-kit": "^0.30.4",
+        "drizzle-kit": "^0.30.5",
         "ts-node": "^10.9.2",
-        "typescript": "^5.7.3"
+        "typescript": "^5.8.2"
     }
 }
