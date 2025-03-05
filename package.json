@@ -20,7 +20,7 @@
         "dev": "yarn --cwd ./packages/cli run dev"
     },
     "devDependencies": {
-        "@agentscript-ai/tsconfig": "^0.7.2",
+        "@agentscript-ai/tsconfig": "^0.8.0",
         "@nzyme/cli": "^0.7.0",
         "prettier": "^3.5.3",
         "supabase": "2.17.0",
