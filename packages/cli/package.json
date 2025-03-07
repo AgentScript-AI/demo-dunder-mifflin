@@ -18,7 +18,7 @@
         "dev": "dotenv -e ../../.env -- node --inspect --watch-path=../ ./dist/cli.js"
     },
     "dependencies": {
-        "@ai-sdk/anthropic": "^1.1.13",
+        "@ai-sdk/anthropic": "^1.1.15",
         "@dunder-mifflin/database": "workspace:^",
         "@nzyme/utils": "^0.7.0",
         "@tqman/ink-table": "^0.0.0-development",
@@ -36,7 +36,7 @@
     "devDependencies": {
         "@agentscript-ai/eslint": "^0.8.0",
         "@agentscript-ai/tsconfig": "^0.8.0",
-        "@types/node": "^22.13.5",
+        "@types/node": "^22.13.9",
         "@types/react": "^19",
         "dotenv-cli": "^8.0.0",
         "ts-node": "^10.9.2",

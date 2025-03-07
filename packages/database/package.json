@@ -25,7 +25,7 @@
     "devDependencies": {
         "@agentscript-ai/eslint": "^0.8.0",
         "@agentscript-ai/tsconfig": "^0.8.0",
-        "@types/node": "^22.13.5",
+        "@types/node": "^22.13.9",
         "dotenv": "^16.4.7",
         "dotenv-cli": "^8.0.0",
         "drizzle-kit": "^0.30.5",
