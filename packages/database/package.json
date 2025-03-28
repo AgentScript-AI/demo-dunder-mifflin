@@ -17,8 +17,8 @@
     },
     "dependencies": {
         "@agentscript-ai/core": "^0.8.0",
-        "@nzyme/ioc": "^0.8.0",
-        "@nzyme/utils": "^0.8.0",
+        "@nzyme/ioc": "^0.9.0",
+        "@nzyme/utils": "^0.9.0",
         "drizzle-orm": "^0.40.0",
         "postgres": "^3.4.5"
     },

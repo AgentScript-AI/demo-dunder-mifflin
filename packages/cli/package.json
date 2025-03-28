@@ -20,7 +20,7 @@
     "dependencies": {
         "@ai-sdk/anthropic": "^1.1.15",
         "@dunder-mifflin/database": "workspace:^",
-        "@nzyme/utils": "^0.8.0",
+        "@nzyme/utils": "^0.9.0",
         "@tqman/ink-table": "^0.0.0-development",
         "agentscript-ai": "^0.8.0",
         "chalk": "^5.4.1",
