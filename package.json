@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "@agentscript-ai/tsconfig": "^0.8.0",
-        "@nzyme/cli": "^0.12.0",
+        "@nzyme/cli": "^0.12.1",
         "prettier": "^3.5.3",
         "supabase": "2.15.8",
         "ts-node": "^10.9.2",
