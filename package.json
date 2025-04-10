@@ -9,7 +9,7 @@
     "scripts": {
         "update:deps": "yarn up \"@nzyme/*\" \"@agentscript-ai/*\" agentscript-ai",
         "update:self": "yarn set version berry",
-        "update": "yarn update-interactive",
+        "update": "yarn upgrade-interactive",
         "db:start": "yarn supabase start",
         "db:push": "yarn --cwd ./packages/database run push",
         "db:seed": "yarn --cwd ./packages/database run seed",
@@ -21,11 +21,11 @@
     "devDependencies": {
         "@agentscript-ai/tsconfig": "^0.8.0",
         "@nzyme/cli": "^0.12.1",
+        "@nzyme/eslint": "^0.12.1",
         "prettier": "^3.5.3",
-        "supabase": "2.19.5",
+        "supabase": "2.21.1",
         "ts-node": "^10.9.2",
-        "typescript": "^5.8.2",
-        "@nzyme/eslint": "^0.12.1"
+        "typescript": "^5.8.3"
     },
     "workspaces": [
         "packages/*"

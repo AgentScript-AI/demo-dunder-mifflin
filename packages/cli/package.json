@@ -18,7 +18,7 @@
         "dev": "dotenv -e ../../.env -- node --inspect --watch-path=../ ./dist/cli.js"
     },
     "dependencies": {
-        "@ai-sdk/anthropic": "^1.1.16",
+        "@ai-sdk/anthropic": "^1.2.9",
         "@dunder-mifflin/database": "workspace:^",
         "@nzyme/utils": "^0.12.1",
         "@tqman/ink-table": "^0.0.0-development",
@@ -26,20 +26,20 @@
         "chalk": "^5.4.1",
         "ink": "^5.2.0",
         "ink-big-text": "^2.0.0",
-        "ink-divider": "^4.1.0",
+        "ink-divider": "^4.1.1",
         "ink-select-input": "^6.0.0",
         "ink-spinner": "^5.0.0",
         "ink-syntax-highlight": "^2.0.2",
         "ink-text-input": "^6.0.0",
-        "react": "^18"
+        "react": "^18.3.1"
     },
     "devDependencies": {
         "@agentscript-ai/eslint": "^0.8.0",
         "@agentscript-ai/tsconfig": "^0.8.0",
-        "@types/node": "^22.13.10",
-        "@types/react": "^19.0.10",
+        "@types/node": "^22.14.0",
+        "@types/react": "^19.1.0",
         "dotenv-cli": "^8.0.0",
         "ts-node": "^10.9.2",
-        "typescript": "^5.8.2"
+        "typescript": "^5.8.3"
     }
 }
