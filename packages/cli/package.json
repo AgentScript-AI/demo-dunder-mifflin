@@ -8,11 +8,11 @@
     "author": "Michał Kędrzyński <m.kedrzynski@gmail.com>",
     "private": true,
     "type": "module",
-    "main": "./dist/index.js",
+    "main": "./dist/index.cjs",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "scripts": {
-        "eslint": "eslint . --fix --cache",
+        "lint": "eslint . --fix --cache",
         "build:esm": "tsc --build ./tsconfig.esm.json",
         "start": "dotenv -e ../../.env -- node dist/cli.js",
         "dev": "dotenv -e ../../.env -- node --inspect --watch-path=../ ./dist/cli.js"
@@ -39,6 +39,7 @@
         "@types/node": "^22.14.0",
         "@types/react": "^19.1.0",
         "dotenv-cli": "^8.0.0",
+        "eslint": "^9.24.0",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.3"
     }

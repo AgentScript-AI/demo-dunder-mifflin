@@ -21,6 +21,7 @@
         "@agentscript-ai/tsconfig": "^0.8.0",
         "@nzyme/cli": "^0.12.1",
         "@nzyme/eslint": "^0.12.1",
+        "eslint": "^9.24.0",
         "prettier": "^3.5.3",
         "supabase": "2.21.1",
         "ts-node": "^10.9.2",
