@@ -7,10 +7,9 @@
     "author": "Michał Kędrzyński <m.kedrzynski@gmail.com>",
     "private": true,
     "scripts": {
-        "upgrade:agentscript": "yarn up agentscript-ai \"@agentscript-ai/*\"",
-        "upgrade:nzyme": "yarn up \"@nzyme/*\"",
-        "upgrade:auto": "yarn upgrade:agentscript && yarn upgrade:nzyme",
-        "upgrade": "yarn upgrade:auto && yarn upgrade-interactive",
+        "update:deps": "yarn up \"@nzyme/*\" \"@agentscript-ai/*\" agentscript-ai",
+        "update:self": "yarn set version berry",
+        "update": "yarn update-interactive",
         "db:start": "yarn supabase start",
         "db:push": "yarn --cwd ./packages/database run push",
         "db:seed": "yarn --cwd ./packages/database run seed",
@@ -23,9 +22,10 @@
         "@agentscript-ai/tsconfig": "^0.8.0",
         "@nzyme/cli": "^0.12.1",
         "prettier": "^3.5.3",
-        "supabase": "2.15.8",
+        "supabase": "2.19.5",
         "ts-node": "^10.9.2",
-        "typescript": "^5.8.2"
+        "typescript": "^5.8.2",
+        "@nzyme/eslint": "^0.12.1"
     },
     "workspaces": [
         "packages/*"
