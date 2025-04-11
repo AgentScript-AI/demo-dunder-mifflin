@@ -16,15 +16,15 @@
         "seed": "dotenv -e ../../.env -- node --loader ts-node/esm drizzle.seed.ts"
     },
     "dependencies": {
-        "@agentscript-ai/core": "^0.8.0",
-        "@nzyme/ioc": "^0.12.1",
-        "@nzyme/utils": "^0.12.1",
+        "@agentscript-ai/core": "^0.9.0",
+        "@nzyme/ioc": "^0.14.0",
+        "@nzyme/utils": "^0.14.0",
         "drizzle-orm": "^0.41.0",
         "postgres": "^3.4.5"
     },
     "devDependencies": {
-        "@agentscript-ai/eslint": "^0.8.0",
-        "@agentscript-ai/tsconfig": "^0.8.0",
+        "@agentscript-ai/eslint": "^0.9.0",
+        "@agentscript-ai/tsconfig": "^0.9.0",
         "@types/node": "^22.14.0",
         "dotenv": "^16.4.7",
         "dotenv-cli": "^8.0.0",
